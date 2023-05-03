@@ -16,4 +16,10 @@ public class Feedback {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "feedback_id")
     Integer feedback_id;
+
+    String feedback_details;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "interview_id")
+    private Interview interview;
 }

@@ -1,14 +1,10 @@
 package com.Job_Portal_Application.Job_Portal_Application.Controllers;
 
-import com.Job_Portal_Application.Job_Portal_Application.Models.Notification;
 import com.Job_Portal_Application.Job_Portal_Application.Models.Resume;
-import com.Job_Portal_Application.Job_Portal_Application.Services.Notification_Service;
 import com.Job_Portal_Application.Job_Portal_Application.Services.Resume_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @RestController
 @RequestMapping(value = "resume")
 public class Resume_Controller {

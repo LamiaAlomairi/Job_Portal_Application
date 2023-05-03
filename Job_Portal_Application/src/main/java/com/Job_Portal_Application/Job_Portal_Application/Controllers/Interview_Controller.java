@@ -1,14 +1,10 @@
 package com.Job_Portal_Application.Job_Portal_Application.Controllers;
 
-import com.Job_Portal_Application.Job_Portal_Application.Models.Feedback;
 import com.Job_Portal_Application.Job_Portal_Application.Models.Interview;
-import com.Job_Portal_Application.Job_Portal_Application.Services.Feedback_Service;
 import com.Job_Portal_Application.Job_Portal_Application.Services.Interview_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @RestController
 @RequestMapping(value = "interview")
 public class Interview_Controller {

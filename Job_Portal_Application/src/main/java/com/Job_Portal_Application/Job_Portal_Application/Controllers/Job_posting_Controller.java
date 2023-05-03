@@ -1,14 +1,10 @@
 package com.Job_Portal_Application.Job_Portal_Application.Controllers;
 
-import com.Job_Portal_Application.Job_Portal_Application.Models.Interview;
 import com.Job_Portal_Application.Job_Portal_Application.Models.Job_posting;
-import com.Job_Portal_Application.Job_Portal_Application.Services.Interview_Service;
 import com.Job_Portal_Application.Job_Portal_Application.Services.Job_posting_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @RestController
 @RequestMapping(value = "job_posting")
 public class Job_posting_Controller {

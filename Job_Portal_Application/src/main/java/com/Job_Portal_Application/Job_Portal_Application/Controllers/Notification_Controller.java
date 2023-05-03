@@ -1,14 +1,10 @@
 package com.Job_Portal_Application.Job_Portal_Application.Controllers;
 
-import com.Job_Portal_Application.Job_Portal_Application.Models.Job_seeker;
 import com.Job_Portal_Application.Job_Portal_Application.Models.Notification;
-import com.Job_Portal_Application.Job_Portal_Application.Services.Job_seeker_Service;
 import com.Job_Portal_Application.Job_Portal_Application.Services.Notification_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @RestController
 @RequestMapping(value = "notification")
 public class Notification_Controller {
