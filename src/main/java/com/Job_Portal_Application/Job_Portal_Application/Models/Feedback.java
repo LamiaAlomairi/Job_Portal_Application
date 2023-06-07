@@ -14,13 +14,11 @@ import javax.persistence.*;
 public class Feedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "feedback_id")
-    Integer feedback_id;
-
-    String feedback_details;
+    Integer id;
+    String details;
 
     @ManyToOne
-    @JoinColumn(name = "interview_id", referencedColumnName = "interview_id")
+    @JoinColumn(name = "interview_id", referencedColumnName = "id")
     Interview interview;
 
 }

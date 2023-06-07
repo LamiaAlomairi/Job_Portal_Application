@@ -1,24 +1,24 @@
 package com.Job_Portal_Application.Job_Portal_Application.Controllers;
 
 import com.Job_Portal_Application.Job_Portal_Application.Models.Feedback;
-import com.Job_Portal_Application.Job_Portal_Application.Services.Feedback_Service;
+import com.Job_Portal_Application.Job_Portal_Application.Services.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequestMapping(value = "feedback")
-public class Feedback_Controller {
+public class FeedbackController {
     //    http://localhost:8080/feedback/getAll
     @Autowired
-    Feedback_Service feedback_service;
+    FeedbackService feedbackService;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Feedback> getAllFeedbacks() {
 
-        return feedback_service.getAllFeedbacks();
+        return feedbackService.getAllFeedbacks();
     }
     @GetMapping(value = "getById")
     public Feedback getFeedbackById(@RequestParam Integer id) {
 
-        return feedback_service.getFeedbackById(id);
+        return feedbackService.getFeedbackById(id);
     }
 }

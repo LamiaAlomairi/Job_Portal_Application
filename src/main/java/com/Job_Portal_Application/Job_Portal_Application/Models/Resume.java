@@ -12,11 +12,10 @@ import javax.persistence.*;
 public class Resume {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "resume_id")
-    Integer resume_id;
+    Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "job_seeker_id", referencedColumnName = "job_seeker_id")
-    private Job_seeker job_seeker;
+    @JoinColumn(name = "jobSeeker_id", referencedColumnName = "id")
+    private JobSeeker jobSeeker;
 
 }

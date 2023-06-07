@@ -12,12 +12,10 @@ import javax.persistence.*;
 public class Notification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "notification_id")
-    Integer notification_id;
-
-    String notification_date;
+    Integer id;
+    String date;
 
     @ManyToOne
-    @JoinColumn(name = "job_seeker_id", referencedColumnName = "job_seeker_id")
-    private Job_seeker job_seeker;
+    @JoinColumn(name = "jobSeeker_id", referencedColumnName = "id")
+    private JobSeeker jobSeeker;
 }

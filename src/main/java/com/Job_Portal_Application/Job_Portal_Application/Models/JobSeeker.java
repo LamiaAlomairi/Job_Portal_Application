@@ -10,38 +10,29 @@ import javax.persistence.*;
 @Setter
 @Data
 @Entity
-@Table(name = "job_seeker")
-public class Job_seeker {
+@Table(name = "jobSeeker")
+public class JobSeeker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "job_seeker_id")
-    Integer job_seeker_id;
-
-    @Column(name = "job_seeker_name")
-    String job_seeker_name;
-
-    @Column(name = "email")
+    Integer id;
+    String name;
     String email;
-
-    @Column(name = "phone")
     Integer phone;
-
-    @Column(name = "address")
     String address;
 
-    @OneToMany(mappedBy = "job_seeker")
+    @OneToMany(mappedBy = "jobSeeker")
     @JsonIgnore
     private List<Resume> resumes;
 
-    @OneToMany(mappedBy = "job_seeker")
+    @OneToMany(mappedBy = "jobSeeker")
     @JsonIgnore
     private List<Application> applications;
 
-    @OneToMany(mappedBy = "job_seeker")
+    @OneToMany(mappedBy = "jobSeeker")
     @JsonIgnore
     private List<Interview> interviews;
 
-    @OneToMany(mappedBy = "job_seeker")
+    @OneToMany(mappedBy = "jobSeeker")
     @JsonIgnore
     private List<Notification> notifications;
 }

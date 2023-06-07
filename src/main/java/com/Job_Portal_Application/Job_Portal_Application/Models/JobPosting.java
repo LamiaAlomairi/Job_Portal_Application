@@ -10,34 +10,25 @@ import javax.persistence.*;
 @Setter
 @Data
 @Entity
-@Table(name = "job_posting")
-public class Job_posting {
+@Table(name = "jobPosting")
+public class JobPosting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "job_posting_id")
-    Integer job_posting_id;
-
-    @Column(name = "job_title")
-    String job_title;
-
-    @Column(name = "location")
+    Integer id;
+    String title;
     String location;
-
-    @Column(name = "salary")
     Double salary;
-
-    @Column(name = "address")
     String address;
 
     @ManyToOne
-    @JoinColumn(name = "employer_id", referencedColumnName = "employer_id")
+    @JoinColumn(name = "employer_id", referencedColumnName = "id")
     Employer employer;
 
-    @OneToMany(mappedBy = "job_posting")
+    @OneToMany(mappedBy = "jobPosting")
     @JsonIgnore
     private List<Application> applications;
 
-    @OneToMany(mappedBy = "job_posting")
+    @OneToMany(mappedBy = "jobPosting")
     @JsonIgnore
     private List<Interview> interviews;
 }

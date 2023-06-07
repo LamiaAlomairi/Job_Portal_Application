@@ -14,18 +14,16 @@ import javax.persistence.*;
 public class Application {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "application_id")
-    Integer application_id;
-
-    String application_date;
+    Integer id;
+    String date;
 
     @ManyToOne
-    @JoinColumn(name = "job_seeker_id", referencedColumnName = "job_seeker_id")
-    Job_seeker job_seeker;
+    @JoinColumn(name = "jobSeeker_id", referencedColumnName = "id")
+    JobSeeker jobSeeker;
 
     @ManyToOne
-    @JoinColumn(name = "job_posting_id", referencedColumnName = "job_posting_id")
-    Job_posting job_posting;
+    @JoinColumn(name = "jobPosting_id", referencedColumnName = "id")
+    JobPosting jobPosting;
 
     @OneToMany(mappedBy = "application")
     @JsonIgnore

@@ -16,22 +16,20 @@ import java.util.List;
 public class Interview {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "interview_id")
-    Integer interview_id;
-
-    String interview_date;
+    Integer id;
+    String date;
 
     @ManyToOne
-    @JoinColumn(name = "application_id", referencedColumnName = "application_id")
+    @JoinColumn(name = "application_id", referencedColumnName = "id")
     Application application;
 
     @ManyToOne
-    @JoinColumn(name = "job_seeker_id", referencedColumnName = "job_seeker_id")
-    Job_seeker job_seeker;
+    @JoinColumn(name = "jobSeeker_id", referencedColumnName = "id")
+    JobSeeker jobSeeker;
 
     @ManyToOne
-    @JoinColumn(name = "job_posting_id", referencedColumnName = "job_posting_id")
-    Job_posting job_posting;
+    @JoinColumn(name = "jobPosting_id", referencedColumnName = "id")
+    JobPosting jobPosting;
 
     @OneToMany(mappedBy = "interview")
     @JsonIgnore
